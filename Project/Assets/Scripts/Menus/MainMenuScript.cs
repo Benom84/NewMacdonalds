@@ -10,15 +10,20 @@ public class MainMenuScript : MonoBehaviour {
 	public enum Button{Quit, Sound, Play, About}
 
 	public Button button;
+	private AudioSource menuMusic;
 
 	void Start() {
 
-		if (button == Button.Sound)
-				if (!PlayerPrefs.HasKey ("Music")) {
-						PlayerPrefs.SetString ("Music", "On");
-						audio.mute = false;
-				}
 
+
+
+		if (button == Button.Sound) {
+			menuMusic = GameObject.Find ("MainMenuMusic").GetComponent<AudioSource> ();
+			if (!PlayerPrefs.HasKey ("Music")) {
+				PlayerPrefs.SetString ("Music", "On");
+				menuMusic.mute = false;
+			}
+		}
 	}
 
 	void OnMouseDown() {
@@ -30,10 +35,10 @@ public class MainMenuScript : MonoBehaviour {
 			Application.LoadLevel ("About");
 		else if (PlayerPrefs.GetString("Music") == "On") {
 			PlayerPrefs.SetString ("Music", "Off");
-			audio.mute = true;
+			menuMusic.mute = true;
 		} else {
 			PlayerPrefs.SetString ("Music", "On");
-			audio.mute = false;
+			menuMusic.mute = false;;
 		}
 	}
 
