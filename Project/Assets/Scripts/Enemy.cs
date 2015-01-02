@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
 	public float deathSpinMax = 100f;	// A value to give the maximum amount of Torque when dying
 	public float jumpForce = 10f;
 	public float jumpForceHor = 10f;
+	public AnimationClip deathClip;
 
 	public AudioClip[] deathClips;		// An array of audioclips that can play when the enemy dies.
 	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
@@ -45,6 +46,7 @@ public class Enemy : MonoBehaviour
 	private Transform frontCheck;		// Reference to the position of the gameobject used for checking if something is in front.
 	private bool dead = false;			// Whether or not the enemy is dead.
 	private Score score;				// Reference to the Score script.
+	private Animator anim;
 
 
 	private GameObject player;			// Reference to the player object
@@ -64,6 +66,7 @@ public class Enemy : MonoBehaviour
 	private bool playerChangedGround;
 	private PlayerHealth playerHealthScript;
 	private bool playerDead;
+
 
 	private GameObject[] bouncers;		// List of all Bouncers
 	private int[,] edgeMatrix;			// The edge matrix
@@ -86,6 +89,7 @@ public class Enemy : MonoBehaviour
 		mapManager = GameObject.FindGameObjectWithTag ("map");
 		bouncers = mapManager.GetComponent<MapCreator> ().bouncers;
 		edgeMatrix = mapManager.GetComponent<MapCreator> ().edgeMatrix;
+		anim = GetComponent<Animator> ();
 
 		isJumping = true;
 
@@ -97,8 +101,12 @@ public class Enemy : MonoBehaviour
 	void FixedUpdate ()
 	{
 
+		anim.SetFloat ("Speed", transform.rigidbody2D.velocity.x);
+
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 		playerDead = playerHealthScript.dead;
+
+
 
 		//If the enemy is on the ground and the player is dead
 		if (playerDead && grounded) {
@@ -109,8 +117,8 @@ public class Enemy : MonoBehaviour
 		
 		}
 
-		// If the enemy is not moving at the y axis
-		if ((transform.rigidbody2D.velocity.y == 0) && (lastVelocity == 0) && !(isJumping))
+		// If the enemy is not moving at the y axis and is not dead
+		if ((transform.rigidbody2D.velocity.y == 0) && (lastVelocity == 0) && !(isJumping) && !dead)
 			if (((transform.position.x - xDestination < 0.1) && left) || 
 			   ((transform.position.x - xDestination > 0.1) && !left)) {
 			//Debug.Log("This rule is making me flip rule 01 xDestination: " + xDestination + " My Destination"+ transform.position.x +  " Going left? " + left);		
@@ -158,18 +166,14 @@ public class Enemy : MonoBehaviour
 
 
 		// Set the enemy's velocity to moveSpeed in the x direction.
-		// Only if we are not on the destination itself and grounded
-		if ((Mathf.Abs(xDestination - transform.position.x) > 0) && (rigidbody2D.velocity.y == 0))
+		// Only if we are not on the destination itself and grounded and not dead!
+		if ((Mathf.Abs(xDestination - transform.position.x) > 0) && (rigidbody2D.velocity.y == 0) && !dead)
 			rigidbody2D.velocity = new Vector2 (transform.localScale.x * moveSpeed, rigidbody2D.velocity.y);
 
 		// Set the last velocity
 		lastVelocity = transform.rigidbody2D.velocity.y;
 
-		// If the enemy has one hit point left and has a damagedEnemy sprite...
-		if (HP == 1 && damagedEnemy != null)
-			// ... set the sprite renderer's sprite to be the damagedEnemy sprite.
-			ren.sprite = damagedEnemy;
-		
+
 		// If the enemy has zero or fewer hit points and isn't dead yet...
 		if (HP <= 0 && !dead)
 			// ... call the death function.
@@ -221,6 +225,7 @@ public class Enemy : MonoBehaviour
 		AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 
 		isJumping = true;	
+
 	
 	}
 
@@ -248,26 +253,27 @@ public class Enemy : MonoBehaviour
 		//ren.enabled = true;
 		//ren.sprite = deadEnemy;
 
-		// Increase the score by 100 points
-		score.score += 100;
+		// Increase the score by 10 points
+		score.score += 10;
 		SpawnManagerLevel1.DeathCounter ();
 
-		Destroy (gameObject);
 		// Set dead to true.
 		dead = true;
 		// Play a random audioclip from the deathClips array.
 		int i = Random.Range (0, deathClips.Length);
 		AudioSource.PlayClipAtPoint (deathClips [i], transform.position);
+		
+		// Move the enemy to the background layer
+		gameObject.layer = 31;
+
+		deathClip.wrapMode = WrapMode.Once;
+		anim.Play (deathClip.name);
+		Destroy (gameObject, deathClip.length + 2);
 		return;
 		// Allow the enemy to rotate and spin it by adding a torque.
 		rigidbody2D.fixedAngle = false;
 		rigidbody2D.AddTorque (Random.Range (deathSpinMin, deathSpinMax));
 
-		// Find all of the colliders on the gameobject and set them all to be triggers.
-		Collider2D[] cols = GetComponents<Collider2D> ();
-		foreach (Collider2D c in cols) {
-				c.isTrigger = true;
-		}
 
 	
 		// Create a vector that is just above the enemy.
