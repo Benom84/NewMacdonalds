@@ -3,11 +3,35 @@ using System.Collections;
 
 public class GameMusic : MonoBehaviour {
 
+	public float volume = 0.2f;
+
+	private string prevState;
+	private AudioSource audioSource;
+
 	void Awake() {
-		GameObject mainMenuMusic = GameObject.Find("MainMenuMusic");
-		if (mainMenuMusic) {
-			Destroy(mainMenuMusic);
+
+		audioSource = GetComponent<AudioSource> ();
+		audioSource.ignoreListenerVolume = true;
+		audioSource.volume = volume;
+		prevState = PlayerPrefs.GetString ("Music");
+		if (string.Equals(prevState,"Off")) 
+			audioSource.Stop ();
+		else {
+			PlayerPrefs.SetString("Music", "On");
+			audioSource.Play ();
 		}
-		DontDestroyOnLoad(gameObject);
+	}
+
+
+	void Update() {
+		string currentState = PlayerPrefs.GetString ("Music");
+		if (!string.Equals(prevState,currentState)) {
+			prevState = currentState;
+			if (string.Equals(currentState,"Off"))
+				audioSource.Stop ();
+			else {
+				audioSource.Play ();
+			}
+		}
 	}
 }

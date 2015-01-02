@@ -98,7 +98,7 @@ GameObject:
   - 4: {fileID: 400010}
   - 212: {fileID: 21200010}
   m_Layer: 5
-  m_Name: EffectsDisabled
+  m_Name: MusicDisabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ GameObject:
   - 4: {fileID: 400012}
   - 212: {fileID: 21200012}
   m_Layer: 5
-  m_Name: MusicDisabled
+  m_Name: EffectsDisabled
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483a2194acc9dce4f8e0cc315c128c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: 3
+  button: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483a2194acc9dce4f8e0cc315c128c07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: 2
+  button: 3
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
