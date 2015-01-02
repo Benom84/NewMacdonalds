@@ -8,6 +8,14 @@ public class GameMusic : MonoBehaviour {
 	private string prevState;
 	private AudioSource audioSource;
 
+	void Start(){
+
+		GameObject mainMenuMusic = GameObject.Find ("MainMenuMusic");
+		if (mainMenuMusic)
+						Destroy (mainMenuMusic);
+	
+	}
+
 	void Awake() {
 
 		audioSource = GetComponent<AudioSource> ();
