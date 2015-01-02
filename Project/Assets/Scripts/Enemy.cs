@@ -68,8 +68,6 @@ public class Enemy : MonoBehaviour
 	private GameObject[] bouncers;		// List of all Bouncers
 	private int[,] edgeMatrix;			// The edge matrix
 
-
-
 	void Awake ()
 	{
 		// Setting up the references.
@@ -252,6 +250,7 @@ public class Enemy : MonoBehaviour
 
 		// Increase the score by 100 points
 		score.score += 100;
+		SpawnManagerLevel1.DeathCounter ();
 
 		Destroy (gameObject);
 		// Set dead to true.
