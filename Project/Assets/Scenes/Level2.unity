@@ -1798,6 +1798,10 @@ Prefab:
       propertyPath: m_Color.rgba
       value: 4280819205
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4c9d14bc59ef822429bb12d4564f011c, type: 2}
+      propertyPath: gameTime
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c9d14bc59ef822429bb12d4564f011c, type: 2}
   m_RootGameObject: {fileID: 1042511184}
@@ -1996,7 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbec15f861b0fb40a4d416372496553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTime: 5
+  gameTime: 90
   victoryScreen: {fileID: 100002, guid: 823e558fb533de349b07d5eeb4703fbf, type: 2}
   gameEnded: 0
 --- !u!1001 &1043904448

@@ -87,6 +87,10 @@ public class PlayerHealth : MonoBehaviour
 						GameObject.Instantiate(playerSpirit,transform.position, transform.rotation);
 					}
 
+					GameObject[] spawners = GameObject.FindGameObjectsWithTag ("Spawner");
+					foreach (GameObject spawner in spawners)
+						spawner.GetComponent<Spawner> ().StopSpawner ();
+
 					GameObject.Find ("Timer").GetComponent<Timer>().gameEnded = true;
 				}
 			}
