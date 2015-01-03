@@ -91,7 +91,9 @@ public class PlayerHealth : MonoBehaviour
 					foreach (GameObject spawner in spawners)
 						spawner.GetComponent<Spawner> ().StopSpawner ();
 
-					GameObject.Find ("Timer").GetComponent<Timer>().gameEnded = true;
+					GameObject timer = GameObject.Find ("Timer");
+					if (timer)
+						timer.GetComponent<Timer>().gameEnded = true;
 				}
 			}
 		}

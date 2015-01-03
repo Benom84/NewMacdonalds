@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnManagerLevel1 : MonoBehaviour {
 
+	public GameObject victoryScreen;
 	public static int chickenCounter;
 	[HideInInspector]
 	public static int deathCounter;
@@ -19,6 +20,8 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 	private bool firstWaveStarted;
 	private bool secondWaveStarted;
 	private bool thirdWaveStarted;
+
+	private bool finished = false;
 
 
 	// Use this for initialization
@@ -54,8 +57,10 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		else if ((Time.time >= (endOfSecondWave + 10.0f)) && thirdWaveStarted) 
 			ThirdWave();
 
-		if (deathCounter == 115)
-			Application.LoadLevel ("level2");
+		if ((deathCounter == 115) && !finished) {
+			finished = true;
+			GameObject.Instantiate(victoryScreen, victoryScreen.transform.position, victoryScreen.transform.rotation);
+		}
 	}
 
 	public static void DeathCounter () {

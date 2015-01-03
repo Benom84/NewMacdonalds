@@ -190,7 +190,7 @@ MonoBehaviour:
   deathSpinMin: -100
   deathSpinMax: 100
   jumpForce: 380
-  jumpForceHor: 60
+  jumpForceHor: 50
   deathClip: {fileID: 7400000, guid: ece4cbaa9b9c298499bc5bcf730a5661, type: 2}
   deathClips:
   - {fileID: 8300000, guid: b377abac46a79454583963bc29d6dc9b, type: 3}
