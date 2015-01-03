@@ -22,11 +22,12 @@ public class GameMusic : MonoBehaviour {
 		audioSource.ignoreListenerVolume = true;
 		audioSource.volume = volume;
 		prevState = PlayerPrefs.GetString ("Music");
-		if (string.Equals(prevState,"Off")) 
+		if (string.Equals (prevState, "Off")) {
 			audioSource.Stop ();
-		else {
-			PlayerPrefs.SetString("Music", "On");
-			audioSource.Play ();
+
+		} else {
+		PlayerPrefs.SetString("Music", "On");
+		audioSource.Play ();
 		}
 	}
 
@@ -35,8 +36,10 @@ public class GameMusic : MonoBehaviour {
 		string currentState = PlayerPrefs.GetString ("Music");
 		if (!string.Equals(prevState,currentState)) {
 			prevState = currentState;
-			if (string.Equals(currentState,"Off"))
+			if (string.Equals(currentState,"Off")) {
 				audioSource.Stop ();
+
+			}
 			else {
 				audioSource.Play ();
 			}

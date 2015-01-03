@@ -22,6 +22,10 @@ public class MainMenuScript : MonoBehaviour {
 			if (!PlayerPrefs.HasKey ("Music")) {
 				PlayerPrefs.SetString ("Music", "On");
 				menuMusic.mute = false;
+			} else if (PlayerPrefs.GetString ("Music") == "Off") {
+				menuMusic.mute = true;
+				transform.parent.FindChild ("Main-sound-disabled").gameObject.SetActive(true);
+
 			}
 		}
 	}
@@ -35,9 +39,11 @@ public class MainMenuScript : MonoBehaviour {
 			Application.LoadLevel ("About");
 		else if (PlayerPrefs.GetString("Music") == "On") {
 			PlayerPrefs.SetString ("Music", "Off");
+			transform.parent.FindChild ("Main-sound-disabled").gameObject.SetActive(true);
 			menuMusic.mute = true;
 		} else {
 			PlayerPrefs.SetString ("Music", "On");
+			transform.parent.FindChild ("Main-sound-disabled").gameObject.SetActive(false);
 			menuMusic.mute = false;;
 		}
 	}
