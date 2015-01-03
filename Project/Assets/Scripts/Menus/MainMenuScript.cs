@@ -34,7 +34,7 @@ public class MainMenuScript : MonoBehaviour {
 		if (button == Button.Quit)
 			Application.Quit ();
 		else if (button == Button.Play)
-			Application.LoadLevel ("GrassLevel2");
+			Application.LoadLevel ("Level2");
 		else if (button == Button.About)
 			Application.LoadLevel ("About");
 		else if (PlayerPrefs.GetString("Music") == "On") {

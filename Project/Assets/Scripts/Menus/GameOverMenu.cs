@@ -13,7 +13,7 @@ public class GameOverMenu : MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyDown ("space"))
-						Application.LoadLevel ("GrassLevel2");
+						Application.LoadLevel ("Level2");
 	
 	}
 }
