@@ -8,11 +8,12 @@ public class GameMusic : MonoBehaviour {
 	private string prevState;
 	private AudioSource audioSource;
 
+
 	void Start(){
 
 		GameObject mainMenuMusic = GameObject.Find ("MainMenuMusic");
 		if (mainMenuMusic)
-						Destroy (mainMenuMusic);
+			Destroy (mainMenuMusic);
 	
 	}
 
@@ -24,10 +25,9 @@ public class GameMusic : MonoBehaviour {
 		prevState = PlayerPrefs.GetString ("Music");
 		if (string.Equals (prevState, "Off")) {
 			audioSource.Pause ();
-
 		} else {
-		PlayerPrefs.SetString("Music", "On");
-		audioSource.Play ();
+			PlayerPrefs.SetString("Music", "On");
+			audioSource.Play ();
 		}
 	}
 
@@ -38,7 +38,6 @@ public class GameMusic : MonoBehaviour {
 			prevState = currentState;
 			if (string.Equals(currentState,"Off")) {
 				audioSource.Pause ();
-
 			}
 			else {
 				audioSource.Play ();
