@@ -86,6 +86,8 @@ public class PlayerHealth : MonoBehaviour
 						createdSpirit = true;
 						GameObject.Instantiate(playerSpirit,transform.position, transform.rotation);
 					}
+
+					GameObject.Find ("Timer").GetComponent<Timer>().gameEnded = true;
 				}
 			}
 		}

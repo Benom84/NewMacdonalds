@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\SecondTextCollider.cs" />
      <Compile Include="Assets\Scripts\SpawnManagerLevel1.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
+     <Compile Include="Assets\Scripts\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

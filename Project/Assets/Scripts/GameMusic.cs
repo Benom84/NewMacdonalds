@@ -23,7 +23,7 @@ public class GameMusic : MonoBehaviour {
 		audioSource.volume = volume;
 		prevState = PlayerPrefs.GetString ("Music");
 		if (string.Equals (prevState, "Off")) {
-			audioSource.Stop ();
+			audioSource.Pause ();
 
 		} else {
 		PlayerPrefs.SetString("Music", "On");
@@ -37,7 +37,7 @@ public class GameMusic : MonoBehaviour {
 		if (!string.Equals(prevState,currentState)) {
 			prevState = currentState;
 			if (string.Equals(currentState,"Off")) {
-				audioSource.Stop ();
+				audioSource.Pause ();
 
 			}
 			else {

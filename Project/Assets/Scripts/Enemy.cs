@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
 	void FixedUpdate ()
 	{
 
-		anim.SetFloat ("Speed", transform.rigidbody2D.velocity.x);
+		anim.SetFloat ("Speed", Mathf.Abs(transform.rigidbody2D.velocity.x));
 
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 		playerDead = playerHealthScript.dead;
@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
 
 
 		//If the enemy is on the ground and the player is dead
-		if (playerDead && grounded) {
+		if (playerDead && grounded && !dead) {
 			Vector2 vel = rigidbody2D.velocity;
 			vel.x *= 0;
 			rigidbody2D.velocity = vel;
