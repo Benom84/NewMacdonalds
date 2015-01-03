@@ -1,13 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerHealth.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnManagerLevel1.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerHealth.cs" Line="92" Column="55" />
-      <File FileName="Assets\Scripts\Timer.cs" Line="49" Column="55" />
-      <File FileName="Assets\Scripts\Score.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Spawner.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerSpiritScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SpawnManagerLevel1.cs" Line="52" Column="7" />
+      <File FileName="Assets\Scripts\SpawnManagerLevel2.cs" Line="110" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
