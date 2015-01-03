@@ -21,7 +21,7 @@ public class GameOverMenu : MonoBehaviour {
 	void OnMouseDown() {
 
 		if (button == GameOverButton.Restart)
-			Application.LoadLevel ("Level2");
+			Application.LoadLevel (Application.loadedLevel);
 
 		if (button == GameOverButton.MainMenu)
 			Application.LoadLevel ("MainMenu");
