@@ -5,13 +5,14 @@ public class Gun : MonoBehaviour
 {
 	public Rigidbody2D bullet;				// Prefab of the rocket.
 	public float speed;						// The speed the rocket will fire at.
+	public float reloadTime = 1f;
 	
 	
 	private PlayerControl playerCtrl;		// Reference to the PlayerControl script.
 	private Animator anim;					// Reference to the Animator component.
 	
 	private Pauser pauser;
-
+	private float lastShot;
 
 	void Awake()
 	{
@@ -20,17 +21,21 @@ public class Gun : MonoBehaviour
 		playerCtrl = transform.root.GetComponent<PlayerControl>();
 		GameObject menu = GameObject.Find ("MenuButton"); 
 		pauser = menu.GetComponent<Pauser>();
+		lastShot = Time.time;
 
 	}
 	
 	
 	void Update ()
 	{
+
+		float currTime = Time.time;
 		// If the fire button is pressed...
-		if((Input.GetButtonDown("Fire1")) && (!pauser.paused))
+		if((Input.GetButtonDown("Fire1")) && (!pauser.paused) && (currTime > lastShot + reloadTime))
 		{
 			// ... set the animator Shoot trigger parameter and play the audioclip.
 			Debug.Log("I'm setting shoot");
+			lastShot = currTime;
 			anim.SetTrigger("Shoot");
 			//audio.Play();
 			
