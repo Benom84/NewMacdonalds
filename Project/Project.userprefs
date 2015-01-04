@@ -1,8 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnManagerLevel2.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpawnManagerLevel2.cs" Line="116" Column="5" />
+      <File FileName="Assets\Scripts\Menus\MainMenuScript.cs" Line="38" Column="39" />
+      <File FileName="Assets\Scripts\SpawnManagerLevel2.cs" Line="103" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
