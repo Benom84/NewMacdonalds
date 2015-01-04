@@ -38,7 +38,7 @@ public class SpawnManagerLevel2 : MonoBehaviour {
 		firstSpawner.spawnTime = 5.0f;
 		secondSpawner.spawnTime = 10.0f;
 		thirdSpawner.spawnTime = 7.5f;
-		fourthSpawner.spawnTime = 12.5f;
+		fourthSpawner.spawnTime = 10.0f;
 
 	}
 	
@@ -46,13 +46,10 @@ public class SpawnManagerLevel2 : MonoBehaviour {
 		ChickenCounter ();
 		if (firstWaveStarted) 
 			FirstWave ();
-		else if ((Time.time >= (endOfFirstWave + 12.5f)) && secondWaveStarted) 
+		else if ((Time.time >= (endOfFirstWave + 10.0f)) && secondWaveStarted) 
 			SecondWave();
-		else if ((Time.time >= (endOfSecondWave + 10.0f)) && thirdWaveStarted) 
+		else if ((Time.time >= (endOfSecondWave + 7.0f)) && thirdWaveStarted) 
 			ThirdWave();
-		
-		//if (deathCounter == 115)
-		//	Application.LoadLevel ("level2");
 	}
 	
 	public static void DeathCounter () {
@@ -79,12 +76,12 @@ public class SpawnManagerLevel2 : MonoBehaviour {
 	}
 	
 	void SecondWave () {
-		firstSpawner.spawnTime = 4.5f;
-		secondSpawner.spawnTime = 5.0f;
-		thirdSpawner.spawnTime = 5.5f;
-		fourthSpawner.spawnTime = 6.0f;
+		firstSpawner.spawnTime = 3.5f;
+		secondSpawner.spawnTime = 4.0f;
+		thirdSpawner.spawnTime = 4.5f;
+		fourthSpawner.spawnTime = 5.0f;
 		
-		if (chickenCounter > 40) {
+		if (chickenCounter > 35) {
 			
 			firstSpawner.spawnTime = 0f;
 			secondSpawner.spawnTime = 0f;
@@ -103,19 +100,19 @@ public class SpawnManagerLevel2 : MonoBehaviour {
 	
 	void ThirdWave () {
 		
-		firstSpawner.spawnTime = 5.0f;
-		secondSpawner.spawnTime = 3.0f;
-		thirdSpawner.spawnTime = 2.5f;
-		fourthSpawner.spawnTime = 2.25f;
+		firstSpawner.spawnTime = 1.25f;
+		secondSpawner.spawnTime = 0.5f;
+		thirdSpawner.spawnTime = 1.25f;
+		fourthSpawner.spawnTime = 0.5f;
 		
-		if (chickenCounter > 60) {
+		//if (chickenCounter > 100) {
 			
-			firstSpawner.spawnTime = 0f;
-			secondSpawner.spawnTime = 0f;
-			thirdSpawner.spawnTime = 0f;
-			fourthSpawner.spawnTime = 0f;
+		//	firstSpawner.spawnTime = 0f;
+		//	secondSpawner.spawnTime = 0f;
+		//	thirdSpawner.spawnTime = 0f;
+		//	fourthSpawner.spawnTime = 0f;
 			
-			thirdWaveStarted = false;
-		}	
+		//	thirdWaveStarted = false;
+		//}	
 	}
 }
