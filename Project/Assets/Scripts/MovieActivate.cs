@@ -10,12 +10,11 @@ public class MovieActivate : MonoBehaviour {
 	}
 	void Update() {
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-						if (renderer.material.mainTexture)
-								movTexture.Pause ();
-						else
-								movTexture.Play ();
-				}
+		if (Input.GetKeyDown (KeyCode.Space)) 
+						Application.LoadLevel ("Level1");
+
+		if (movTexture.isPlaying == false)
+						Application.LoadLevel ("Level1");
 	}
 
 }

@@ -33,8 +33,10 @@ public class MainMenuScript : MonoBehaviour {
 	void OnMouseDown() {
 		if (button == Button.Quit)
 			Application.Quit ();
-		else if (button == Button.Play)
-			Application.LoadLevel ("Level2");
+		else if (button == Button.Play) {
+			Destroy(GameObject.Find("MainMenuMusic"));
+			Application.LoadLevel ("OpeningScene");
+		}
 		else if (button == Button.About)
 			Application.LoadLevel ("About");
 		else if (PlayerPrefs.GetString("Music") == "On") {

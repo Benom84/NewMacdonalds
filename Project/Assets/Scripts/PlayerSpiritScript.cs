@@ -31,11 +31,11 @@ public class PlayerSpiritScript : MonoBehaviour {
 		float y = transform.position.y;
 		if (y > loseMenuAppears) {
 			if (!createdMenu) {
-				Debug.Log ("CreatedMenu1: " + createdMenu);
+				//Debug.Log ("CreatedMenu1: " + createdMenu);
 				createdMenu = true;
-				Debug.Log ("CreatedMenu2: " + createdMenu);
+				//Debug.Log ("CreatedMenu2: " + createdMenu);
 				GameObject.Instantiate (loseMenu, loseMenu.transform.position, loseMenu.transform.rotation);
-				Debug.Log ("CreatedMenu3: " + createdMenu);
+				//Debug.Log ("CreatedMenu3: " + createdMenu);
 				pauseButton.GetComponentInChildren<Pauser>().enabled = false;
 				StopEnemies();
 			}
@@ -66,11 +66,11 @@ public class PlayerSpiritScript : MonoBehaviour {
 	//setting delay to 2 seconds
 	IEnumerator wait(float seconds) {
 		yield return new WaitForSeconds(seconds);
-		Debug.Log ("Waited a sec");
+		//Debug.Log ("Waited a sec");
 	}
 	
 	void StopEnemies() {
-		Debug.Log ("entering StopEnemies");
+		//Debug.Log ("entering StopEnemies");
 		StartCoroutine (wait (2.0f));
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		Vector2 noMovement = new Vector2 (0, 0);

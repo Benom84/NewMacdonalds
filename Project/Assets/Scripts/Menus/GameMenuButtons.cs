@@ -29,12 +29,12 @@ public class GameMenuButtons : MonoBehaviour {
 
 		if ((button == GameMenuButton.Music) && (PlayerPrefs.GetString ("Music") == "Off")) {
 			GameObject musicDisableButton = transform.parent.FindChild ("MusicDisabled").gameObject;
-			Debug.Log("Awake - Music is off then should be disabled");
+			//Debug.Log("Awake - Music is off then should be disabled");
 			musicDisableButton.SetActive (true);
 		}
 		if ((button == GameMenuButton.Effects) && (PlayerPrefs.GetString ("Effects") == "Off")) {
 			GameObject effectsDisableButton = transform.parent.FindChild ("EffectsDisabled").gameObject;
-			Debug.Log("Awake - Effects is off then should be disabled");
+			//Debug.Log("Awake - Effects is off then should be disabled");
 			effectsDisableButton.SetActive (true);
 		}
 	
@@ -56,7 +56,7 @@ public class GameMenuButtons : MonoBehaviour {
 
 	void MusicChanger() {
 		GameObject musicDisableButton = transform.parent.FindChild ("MusicDisabled").gameObject;
-		Debug.Log ("Music Changer: " + musicDisableButton.activeSelf);
+		//Debug.Log ("Music Changer: " + musicDisableButton.activeSelf);
 		musicDisableButton.SetActive (!musicDisableButton.activeSelf);
 		if (PlayerPrefs.GetString("Music") == "On") {
 			PlayerPrefs.SetString ("Music", "Off");
@@ -68,7 +68,7 @@ public class GameMenuButtons : MonoBehaviour {
 	void EffectsChanger() {
 
 		GameObject effectsDisableButton = transform.parent.FindChild ("EffectsDisabled").gameObject;
-		Debug.Log ("Effects Changer: " + effectsDisableButton.activeSelf);
+		//Debug.Log ("Effects Changer: " + effectsDisableButton.activeSelf);
 		effectsDisableButton.SetActive (!effectsDisableButton.activeSelf);
 		if (PlayerPrefs.GetString("Effects") == "On") {
 			AudioListener.volume = 0;

@@ -18,7 +18,7 @@ public class Spawner : MonoBehaviour
 
 	void FixedUpdate() {
 		if (prevSpawnTime != spawnTime) {
-			Debug.Log("into condition cancelinvoke");
+			//Debug.Log("into condition cancelinvoke");
 			CancelInvoke("Spawn");
 			prevSpawnTime = spawnTime;
 			InvokeRepeating("Spawn", spawnDelay, spawnTime);

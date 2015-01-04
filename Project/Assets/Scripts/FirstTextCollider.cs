@@ -8,11 +8,11 @@ public class FirstTextCollider : MonoBehaviour {
 		GameObject.FindWithTag ("MoveHeader").SetActive (true);
 		GameObject.FindWithTag ("ShootHeader").SetActive (false);
 		//gameObject.SetActive (false);
-		Debug.Log ("1");
+		//Debug.Log ("1");
 		//StartCoroutine (wait(2.0f));
-		Debug.Log ("2");
+		//Debug.Log ("2");
 		gameObject.SetActive (true);
-		Debug.Log ("3");
+		//Debug.Log ("3");
 		
 	}
 	
@@ -23,7 +23,7 @@ public class FirstTextCollider : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter2D() {
-		Debug.Log ("entering ontriggerenter");
+		//Debug.Log ("entering ontriggerenter");
 		GameObject.FindWithTag ("SecondText").SetActive (true);
 		gameObject.SetActive (false);
 		

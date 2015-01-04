@@ -25,7 +25,7 @@ public class MapCreator : MonoBehaviour {
 	
 		bouncers = GameObject.FindGameObjectsWithTag ("Bouncer");
 		edgeMatrix = new int[bouncers.Length, bouncers.Length];
-		Debug.Log ("Edge Matrix: " + edgeMatrix.Length);
+		//Debug.Log ("Edge Matrix: " + edgeMatrix.Length);
 
 		int counter = 0;
 		int row = 0;
@@ -57,7 +57,7 @@ public class MapCreator : MonoBehaviour {
 				if (bouncer.transform.parent.gameObject.GetInstanceID() == otherBouncer.transform.parent.gameObject.GetInstanceID())
 				{
 					edgeMatrix[row, col] = 33;
-					Debug.Log("Added an edge between: " + bouncer.GetInstanceID() + " and " + otherBouncer.GetInstanceID() + " Type: " + edgeMatrix[row, col]);
+					//Debug.Log("Added an edge between: " + bouncer.GetInstanceID() + " and " + otherBouncer.GetInstanceID() + " Type: " + edgeMatrix[row, col]);
 				}
 				else if (higher) 
 				{
@@ -68,7 +68,7 @@ public class MapCreator : MonoBehaviour {
 						else
 							edgeMatrix[row, col] = 11;
 
-						Debug.Log("Added an edge between: " + bouncer.GetInstanceID() + " and " + otherBouncer.GetInstanceID() + " Type: " + edgeMatrix[row, col]);
+						//Debug.Log("Added an edge between: " + bouncer.GetInstanceID() + " and " + otherBouncer.GetInstanceID() + " Type: " + edgeMatrix[row, col]);
 
 					}
 				} else
@@ -82,7 +82,7 @@ public class MapCreator : MonoBehaviour {
 						else
 							edgeMatrix[row, col] = 21;
 
-						Debug.Log("Added an edge between: " + bouncer.GetInstanceID() + " and " + otherBouncer.GetInstanceID() + " Type: " + edgeMatrix[row, col]);
+						//Debug.Log("Added an edge between: " + bouncer.GetInstanceID() + " and " + otherBouncer.GetInstanceID() + " Type: " + edgeMatrix[row, col]);
 					}
 
 				}

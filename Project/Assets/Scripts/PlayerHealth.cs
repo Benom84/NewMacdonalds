@@ -149,6 +149,6 @@ public class PlayerHealth : MonoBehaviour
 	//setting delay to 2 seconds
 	IEnumerator wait(float seconds) {
 		yield return new WaitForSeconds(seconds);
-		Debug.Log ("Waited for: " + seconds);
+		//Debug.Log ("Waited for: " + seconds);
 	}
 }

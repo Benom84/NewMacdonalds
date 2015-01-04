@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
 		if((Input.GetButtonDown("Fire1")) && (!pauser.paused) && (currTime > lastShot + reloadTime))
 		{
 			// ... set the animator Shoot trigger parameter and play the audioclip.
-			Debug.Log("I'm setting shoot");
+			//Debug.Log("I'm setting shoot");
 			lastShot = currTime;
 			anim.SetTrigger("Shoot");
 			//audio.Play();
