@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ClosingSceneScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\AboutReturnScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\ClosingSceneScript.cs" Line="56" Column="38" />
+      <File FileName="Assets\Scripts\Menus\AboutReturnScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Menus\MainMenuMusic.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ClosingSceneScript.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
