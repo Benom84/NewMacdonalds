@@ -3,14 +3,10 @@ using System.Collections;
 
 public class VictoryMenu : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
 	// Update is called once per frame
 	void OnMouseDown() {
-		Application.LoadLevel ("MainMenu");
+		Application.LoadLevel ("ClosingScene");
 
 	}
 }
