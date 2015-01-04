@@ -1,10 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\AboutReturnScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy.cs">
     <Files>
+      <File FileName="Assets\Scripts\SpawnManagerLevel1.cs" Line="60" Column="26" />
+      <File FileName="Assets\Scripts\Menus\VictoryMenu.cs" Line="6" Column="1" />
       <File FileName="Assets\Scripts\Menus\AboutReturnScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Menus\MainMenuMusic.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ClosingSceneScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="221" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

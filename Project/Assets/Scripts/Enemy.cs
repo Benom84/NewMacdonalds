@@ -215,12 +215,13 @@ public class Enemy : MonoBehaviour
 			Flip ();
 		}
 
-		if (jumpVerticalDirection == 1)
-			// Add a vertical and horizontal force to the enemy.
-			rigidbody2D.AddForce(new Vector2(jumpForceHor * (left ? -1 : 1) * (directionChange ? 0.1f : 1), jumpForce * (directionChange ? 1f : 1)));
-		else if (jumpVerticalDirection == 2)
-			rigidbody2D.AddForce(new Vector2(jumpForceHor * (left ? -1 : 1), jumpForce/4f));
-
+		if (!dead) {
+			if (jumpVerticalDirection == 1)
+				// Add a vertical and horizontal force to the enemy.
+				rigidbody2D.AddForce (new Vector2 (jumpForceHor * (left ? -1 : 1) * (directionChange ? 0.1f : 1), jumpForce * (directionChange ? 1f : 1)));
+			else if (jumpVerticalDirection == 2)
+					rigidbody2D.AddForce (new Vector2 (jumpForceHor * (left ? -1 : 1), jumpForce / 4f));
+	}
 		int i = Random.Range(0, jumpClips.Length);
 		AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
 

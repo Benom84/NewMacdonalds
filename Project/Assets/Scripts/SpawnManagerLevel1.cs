@@ -57,7 +57,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		else if ((Time.time >= (endOfSecondWave + 10.0f)) && thirdWaveStarted) 
 			ThirdWave();
 
-		if ((deathCounter == 115) && !finished) {
+		if ((deathCounter == 60) && !finished) {
 			finished = true;
 			GameObject.Instantiate(victoryScreen, victoryScreen.transform.position, victoryScreen.transform.rotation);
 		}
@@ -65,6 +65,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 
 	public static void DeathCounter () {
 		deathCounter++;
+		Debug.Log ("Death counter is: " + deathCounter);
 	}
 
 	void ChickenCounter () {
@@ -94,7 +95,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		thirdSpawner.spawnDelay = 1f;
 		fourthSpawner.spawnDelay = 1f;
 		
-		if (chickenCounter > 35) {
+		if (chickenCounter > 20) {
 
 			firstSpawner.spawnTime = 0f;
 			secondSpawner.spawnTime = 0f;
@@ -118,7 +119,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		thirdSpawner.spawnTime = 2.5f;
 		fourthSpawner.spawnTime = 2.25f;
 
-		if (chickenCounter > 55) {
+		if (chickenCounter > 30) {
 
 			firstSpawner.spawnTime = 0f;
 			secondSpawner.spawnTime = 0f;
