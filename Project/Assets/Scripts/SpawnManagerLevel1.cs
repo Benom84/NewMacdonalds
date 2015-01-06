@@ -73,7 +73,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 	}
 
 	void FirstWave () {
-		if (chickenCounter > 10) {
+		if (chickenCounter > 5) {
 			firstSpawner.spawnTime = 0f;
 			secondSpawner.spawnTime = 0f;
 			thirdSpawner.spawnTime = 0f;
@@ -95,7 +95,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		thirdSpawner.spawnDelay = 1f;
 		fourthSpawner.spawnDelay = 1f;
 		
-		if (chickenCounter > 20) {
+		if (chickenCounter > 10) {
 
 			firstSpawner.spawnTime = 0f;
 			secondSpawner.spawnTime = 0f;
@@ -119,7 +119,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		thirdSpawner.spawnTime = 2.5f;
 		fourthSpawner.spawnTime = 2.25f;
 
-		if (chickenCounter > 30) {
+		if (chickenCounter > 15) {
 
 			firstSpawner.spawnTime = 0f;
 			secondSpawner.spawnTime = 0f;
