@@ -1,20 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemy.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menus\VictoryMenu.cs">
     <Files>
-      <File FileName="Assets\Scripts\SpawnManagerLevel1.cs" Line="60" Column="26" />
-      <File FileName="Assets\Scripts\Menus\VictoryMenu.cs" Line="6" Column="1" />
-      <File FileName="Assets\Scripts\Menus\AboutReturnScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Menus\MainMenuMusic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ClosingSceneScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="221" Column="5" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SpawnManagerLevel2.cs">
-    <Files>
-      <File FileName="Assets\Scripts\Menus\MainMenuScript.cs" Line="38" Column="39" />
-      <File FileName="Assets\Scripts\SpawnManagerLevel2.cs" Line="103" Column="31" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Menus\VictoryMenu.cs" Line="9" Column="40" />
+      <File FileName="Assets\Scripts\Menus\VictoryScore.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
