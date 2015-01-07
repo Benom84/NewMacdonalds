@@ -20,7 +20,7 @@ public class BulletsUI : MonoBehaviour {
 						guiText.text = "Bullets: " + bullets;
 		else {
 			timeToReload = gunScript.nextReload;
-			guiText.text = "Reloading in: " + (int)(timeToReload + 1f - Time.time);
+			guiText.text = "Reloading in: " + (int)(Mathf.Max((timeToReload + 1f - Time.time), 0));
 
 	
 		}

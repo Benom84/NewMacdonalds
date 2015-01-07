@@ -73,6 +73,6 @@ public class Gun : MonoBehaviour
 			bullets = bulletsToReload;
 		
 		}
-		Debug.Log("Number of bullets: " + bullets + " Next reload: " + nextReload + " reloaded?: " + reloaded);
+		//Debug.Log("Number of bullets: " + bullets + " Next reload: " + nextReload + " reloaded?: " + reloaded);
 	}
 }
