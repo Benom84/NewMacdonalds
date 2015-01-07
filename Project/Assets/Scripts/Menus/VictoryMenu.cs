@@ -6,7 +6,7 @@ public class VictoryMenu : MonoBehaviour {
 
 	// Update is called once per frame
 	void OnMouseDown() {
-		Application.LoadLevel ("ClosingScene2");
+		Application.LoadLevel ("ClosingScene");
 
 	}
 }

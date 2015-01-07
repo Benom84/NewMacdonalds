@@ -57,8 +57,14 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		else if ((Time.time >= (endOfSecondWave + 10.0f)) && thirdWaveStarted) 
 			ThirdWave();
 
-		if ((deathCounter == 60) && !finished) {
+		if ((deathCounter == 30) && !finished) {
 			finished = true;
+			GameObject player = GameObject.Find ("Player");
+			player.rigidbody2D.gravityScale = 0;
+			player.rigidbody2D.velocity = new Vector2 (0, 0);
+			player.GetComponent<PlayerControl> ().enabled = false;
+			player.GetComponent<Animator> ().SetFloat ("Speed", 0);
+			GameObject.Find ("Gun").SetActive (false);
 			GameObject.Instantiate(victoryScreen, victoryScreen.transform.position, victoryScreen.transform.rotation);
 		}
 	}
