@@ -13,10 +13,18 @@ public class Gun : MonoBehaviour
 	
 	private Pauser pauser;
 	private float lastShot;
+	private bool reloaded = true;
+	[HideInInspector]
+	public float nextReload = 0f;
+	[HideInInspector]
+	public int bullets;
+	public int bulletsToReload = 10;
+	public float timeToReload = 5f;
 
 	void Awake()
 	{
 		// Setting up the references.
+		bullets = bulletsToReload;
 		anim = transform.root.gameObject.GetComponent<Animator>();
 		playerCtrl = transform.root.GetComponent<PlayerControl>();
 		GameObject menu = GameObject.Find ("MenuButton"); 
@@ -31,12 +39,18 @@ public class Gun : MonoBehaviour
 
 		float currTime = Time.time;
 		// If the fire button is pressed...
-		if((Input.GetButtonDown("Fire1")) && (!pauser.paused) && (currTime > lastShot + reloadTime))
+		if((Input.GetButtonDown("Fire1")) && (!pauser.paused) && (currTime > lastShot + reloadTime) && (bullets > 0))
 		{
 			// ... set the animator Shoot trigger parameter and play the audioclip.
 			//Debug.Log("I'm setting shoot");
 			lastShot = currTime;
 			anim.SetTrigger("Shoot");
+			bullets--;
+			if (bullets == 0) {
+
+				nextReload = Time.time + timeToReload;
+				reloaded = false;
+			}
 			//audio.Play();
 			
 			// If the player is facing right...
@@ -53,5 +67,12 @@ public class Gun : MonoBehaviour
 				bulletInstance.velocity = new Vector2(speed, 0);
 			}
 		}
+
+		if ((Time.time >= nextReload) && (!reloaded)) {
+			reloaded = true;
+			bullets = bulletsToReload;
+		
+		}
+		Debug.Log("Number of bullets: " + bullets + " Next reload: " + nextReload + " reloaded?: " + reloaded);
 	}
 }
