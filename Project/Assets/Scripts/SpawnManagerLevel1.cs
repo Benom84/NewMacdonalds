@@ -122,8 +122,8 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 
 		firstSpawner.spawnTime = 7.5f;
 		secondSpawner.spawnTime = 5f;
-		thirdSpawner.spawnTime = 2.5f;
-		fourthSpawner.spawnTime = 2.25f;
+		thirdSpawner.spawnTime = 3.5f;
+		fourthSpawner.spawnTime = 3.25f;
 
 		if (chickenCounter > 15) {
 
