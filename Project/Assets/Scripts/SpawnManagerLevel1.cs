@@ -57,7 +57,7 @@ public class SpawnManagerLevel1 : MonoBehaviour {
 		else if ((Time.time >= (endOfSecondWave + 10.0f)) && thirdWaveStarted) 
 			ThirdWave();
 
-		if ((deathCounter == 30) && !finished) {
+		if ((deathCounter == 28) && !finished) {
 			finished = true;
 			GameObject player = GameObject.Find ("Player");
 			player.rigidbody2D.gravityScale = 0;

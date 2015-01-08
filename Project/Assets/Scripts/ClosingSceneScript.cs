@@ -31,7 +31,7 @@ public class ClosingSceneScript : MonoBehaviour {
 	}
 	
 
-	void Update () {
+	void FixedUpdate () {
 
 		if (transform.position.z < zEnd) {
 			if (transform.position.z > zColorChange)
